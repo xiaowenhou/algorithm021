@@ -37,6 +37,30 @@
 
 ​		同样以树为例， 是一层一层进行探索， 探索完一层， 然后再到下一层， 直到最后一层的叶子节点。一般用队列实现。
 
+​		代码模板：
+
+​		
+
+```java
+public void bfs(Node root) {
+    if (root == null) {
+        return;
+    }
+
+    Deque<Node> deque = new ArrayDeque<>();
+    deque.add(root);
+    while (!deque.isEmpty()) {
+        int curLevelSize = deque.size();
+        for (int i = 0; i < curLevelSize; i++) {
+            Node node = deque.removeFirst();
+            doSomething();
+            deque.addLast(othernode);
+        }
+    }
+    return;
+}
+```
+
 ​	贪心算法：
 
 ​		通过寻找局部最优解， 来求全局最优解的方式求解。关键点有两个， 一是能够证明通过全局最优解可以通过寻找局部最优解来解决， 二是要能识别出来局部最优解是什么， 有时候贪心算法的局部不好拆。
